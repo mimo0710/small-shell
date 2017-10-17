@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>练习</title>
+</head>
+<body>
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    //var:variable
+
+    //  ************************************************************************************************
+    //        var a = 5;
+    //        function foo(){
+    //            console.log(a);   //undefined
+    //            var a = 6;      //变量提升 会在console前先声明变量：var a;console.log(a);a = 6;
+    //        }
+    //        foo();
+
+    //        var a = 5;
+    //        function foo(){
+    //            console.log(a); //5
+    //            a = 6;
+    //        }
+    //        foo();
+    //  ************************************************************************************************
+    //        console.log('1=='+a);
+    //        var a = 5;
+    //        function a(){
+    //            console.log('2=='+a);
+    //        }
+    //        a = 6;
+    //        console.log('3=='+a);
+    //        a();
+    //输出结果1==function a(){console.log('2=='+a);}    函数变量提到最前面
+    // 3==6
+    // Uncaught TypeError: a is not a function  a是数字无法调用
+    //  ************************************************************************************************
+    //function定义方式
+
+    //    fn1();
+    //    function fn1(){
+    //        console.log(fn1);
+    //    }
+    //    var fn1 = function () {
+    //        console.log(fn1);
+    //    }
+    //  ************************************************************************************************
+    //js没有块级作用域
+    //        if(true){
+    //            var a = 5;
+    //        }
+    //        console.log(a);
+
+    //        var a = 5;
+    //        function foo(){
+    //            console.log(a);  //undefined
+    //            if(false){
+    //                var a = 6;
+    //            }
+    //        }
+    //        foo();
+    //  ************************************************************************************************
+    //    for(var i=0; i<5; i++){
+    //        console.log(i);//0 1 2 3 4
+    //    }
+    //    console.log(i);//5
+
+    //  ************************************************************************************************
+    //        console.log(a);
+    //        let a = 5; //没有变量提升
+
+    //        let a = 6;
+    //        let a = 5;
+    //        console.log(a);//不能重复定义
+
+    //        var a = 5;
+    //        function foo(){
+    //            console.log(a);
+    //            let a = 6;
+    //        }
+    //        foo();//块级作用域
+
+    //        let a = 5;
+    //        function foo(){
+    //            console.log(a);
+    //            if(false){
+    //                let a = 6;
+    //            }
+    //        }
+    //        foo();//块级作用域
+
+    //    for(let i=0; i<3; i++){
+    //        console.log(i); //0 1 2
+    //    }
+    //    let i = 5;
+    //    console.log(i); //5        块级作用域
+    //  ************************************************************************************************
+    //        function foo(arg){
+    //           console.log(arg);
+    //            let arg = 6;
+    //            console.log(arg);
+    //        }
+    //        foo(5); //暂时性死区
+    //输出结果Uncaught SyntaxError: Identifier 'arg' has already been declared
+    //  ************************************************************************************************
+    //        const a = 5;
+    //        a = 6;
+    //        console.log(a);
+
+    //        const obj = {
+    //            name:'zhangsan',
+    //            age:18
+    //        };
+    //        console.log(obj); //Object {name: "zhangsan", age: 18}
+    //        obj = {
+    //            name:'lisi'
+    //        };
+    //        console.log(obj);//Uncaught TypeError: Assignment to constant variable.
+
+    //        Object.freeze(obj);//冻结
+    //  ************************************************************************************************
+    //        const arr = [1,2,3,4];
+    //        console.log(arr); //1 2 3 4
+    //        arr.push(5);
+    //        console.log(arr);//1 2 3 4 5
+
+    //  ************************************************************************************************
+    //        var oUl = document.querySelector('#ul1');
+    //        var aLi = oUl.getElementsByTagName('li');
+    //        let arr = [];
+
+    //        for(let i=0; i<3; i++){
+    //            aLi[i].index=  i;
+    //            aLi[i].onclick = function () {
+    //                console.log(this.index);
+    //            };
+    //            arr[i] = function () {
+    //              console.log(i);
+    //            };
+    //        }
+    //        arr[3]();
+    //  ************************************************************************************************
+    var oUl = document.querySelector('#ul1');
+    var aLi = oUl.getElementsByTagName('li');
+    //        //方法一：对象自定义属性
+    //        for(var i=0; i<aLi.length; i++){
+    //            aLi[i].index = i;
+    //            aLi[i].onclick = function () {
+    //              console.log(this.index);
+    //            };
+    //        }
+    //方法二：let
+    //        for(let i=0; i<aLi.length; i++){
+    //            aLi[i].onclick = function(){
+    //                console.log(i);
+    //            };
+    //        }
+    //方法三：闭包
+    for(var i=0; i<aLi.length;i++){
+        (function(idx){
+            aLi[idx].onclick = function(){
+                console.log(idx);
+            };
+        })(i);
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
