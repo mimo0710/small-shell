@@ -1,0 +1,71 @@
+上午
+1.行级元素inline：span a             （不能设置宽高，内容撑开 只能设置左右外边距，上下
+不行）
+  块级元素block：p div h1-h6          (p里不能有div或h)
+  替换元素replace： img input
+  相互转化display:inline/block/inline-block   (none/table表格/table-cell/flex或box)
+
+***********************************************************画三角***********************************************
+2.css：内联样式：标签里直接写style属性 （优先）
+       内部样式：head里用标签选择器写style属性
+       外部样式：link
+
+       权重值： 内联 > id > class > tag
+ 盒模型：
+    标准盒模型：宽度=内容宽度
+    怪异盒模型/混杂模式：宽度=内容+padding+border
+    转化：     box-sizing:border-box
+
+
+ 解决元素塌陷问题：  写固定高度
+                    子元素浮动时 父元素跟着浮动
+                    插入空元素 .clearfix::after{
+                                    content:"";
+                                }           (插入的是一个行级元素，不想谁塌陷就给谁加一个class：clearfix)
+                    定位：position:absolute;
+
+ 元素居中：
+        行级：text-aline：center 行高=高
+        块级：1定位父元素position:relevant 子元素absolute top50%left50% 移回子元素宽高一半
+              2前面都一样最后元素一半 transform:translate(-50%,-50%);
+ 外边距合并：
+        俩元素兄弟关系 上margin-bottom下margin-top取最大的 （比如上元素50px下元素40px 两个兄弟元素相间50px）
+        父子关系：给子元素设置margin-top父元素也掉下去：overflow:hidden//float:left//border:1px solid;
+
+**********************************************************************************************************
+3.js基本数据类型：
+            undefined 定义一个变量没有初始值
+            null 没这个变量
+            number string boolean
+var一个function必须先定义后调用 而直接function一个可以先调用后声明
+
+arguments[0]表示传入的第一个参数
+console.log(undefined == null) false
+console.log(undefined === null) true
+console.log(typeof undefined) undefined
+console.log(typeof null) object
+5/0
+Infinity
+
+下午
+1.获取元素  document.getElementById("div1");
+            document.getElementsByTagName("div");
+            document.getElementsByName("username");
+            document.getElementsByClassName("aa");
+document.querySelector("#div1");(要找全部的话最后加All)
+
+2.防止事件覆盖
+  oDiv1.addElementListener("click",function(){},false);
+  事件冒泡：由内到外（浏览器默认） 事件捕获：由外到里 （浏览器先捕获后冒泡）
+  addElementListener第三个参数false冒泡 true捕获
+  阻止事件传播stopPropagation 阻止事件冒泡cancelBubble
+  oDiv1.attachEvent("onclick",function(){}); （ie浏览器里 存在问题：绑定顺序问题 this指向window）
+
+3.事件委托、事件代理：1子元素事件委托给父元素绑定 事件源：e.target、window.event.srcElement
+                      2后生成元素事件绑定问题
+
+4.call apply bind: 翻以前笔记
+
+
+
+themeforest做个个人网站

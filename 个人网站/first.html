@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>mimo</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/ooopic_1505884425.ico" />
+    <link rel="stylesheet" href="css/animate.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="img/fontCss.css">
+    <link rel="stylesheet" type="text/css" href="css/music.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #all{
+            background: #373121;
+        }
+        #all img{
+            padding: 6px 132px 10px 200px;
+            width: 1008px;
+            height: 630px;
+        }
+        #all h1{
+            font-size: 50px;
+            font-weight: 900;
+            color: #FFFFFF;
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            text-shadow: 5px 5px 5px #cccccc;
+            -webkit-animation: bounceInLeft 3s linear 2s;
+            -o-animation: bounceInLeft 3s linear 2s;
+            animation: bounceInLeft 3s linear 2s;
+            border: 1px solid #FFFFFF;
+            padding: 5px 10px;
+        }
+        #caption{
+            position: absolute;
+            float: left;
+            top: 10%;
+            left: 50%;
+            width: 500px;
+            display: inline;
+            color: #FFFFFF;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <img src="img/big-bg.jpg" alt=""/>
+        <div id="caption">
+            <marquee
+                    direction=up
+                    behavior=scroll
+                    loop=100
+                    scrollamount=3
+                    scrolldelay=10
+                    align=middle
+                    height=300
+                    width=600
+                    hspace=20
+                    vspace=100
+                    onmouseover=this.stop() onmouseout=this.start()>
+                Welcome<br>Nice 2 meet u<br>我叫张靖&nbsp&nbsp东北农业大学软件工程1501班<br>巨蟹座 168cm 55kg 爱吃mango<br>今天天气有点阴&nbsp&nbsp但并不讨人厌<br>
+                就像我也不是特别喜欢的大晴天一样<br>下周三我会去再买几条鱼回来<br>以前最喜欢的那条&nbsp&nbsp叫艾奇异<br>不过她和艾迪生殉情了<br>尽管我觉得艾迪生喜欢的是艾因斯坦<br>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp我<br>
+                &nbsp&nbsp&nbsp宇宙上最讨厌鸟的<br>
+                &nbsp&nbsp&nbsp <strong>web前端工程师<strong>
+
+
+            </marquee>
+        </div>
+        <a href="zhangjing.html"><h1 id="h1"> Learn More </h1></a>
+        <EMBED height=1 type=audio/mpeg width=1 src=http://play.baidu.com/?__methodName=mboxCtrl.playSong&fm=altg&__argsValue=38243127# volume="0" loop="-1"></EMBED>
+    </div>
+    <div class="music-bg" style="height: 100%;filter: blur(100px);transition:all 0.3s" id="music-bg">
+        <div class="music-mask"></div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="js/music.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            MC.music({
+                hasAjax:false,
+                left:'85%',
+                bottom:'1%',
+                musicChanged:function(ret){
+                    // alert(ret.url);
+                    // getMusic_buffer(ret.url);
+                    // return;
+                    var data = ret.data;
+                    var index = ret.index;
+                    var imageUrl = data[index].img_url;
+
+                    var music_bg = document.getElementById('music-bg');
+                    music_bg.style.background = 'url('+imageUrl+')no-repeat';
+                    music_bg.style.backgroundSize = 'cover';
+                    music_bg.style.backgroundPosition = 'center 30%';
+                },
+
+                getMusicInfo:function(data){
+
+                },
+
+                musicPlayByWebAudio:function(ret){
+
+                },
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.dialog-container{
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color:#ffffff;
+}
+.dialog-mask{
+    width: 50%;
+    height: 50%;
+}
+.dialog-box{
+    width: 600px;
+    height: 100px;
+    position: absolute;
+    background:#ffffff;
+    top: 210px;
+    left:49px;
+    border:1px solid rgba(255,255,255,1);
+    transform: translate(-50%, -50%);
+    background: url(../img/background.jpg) no-repeat 0% 0%;
+    border-radius:30px;
+}
+.dialog-title{
+    height: 30px;
+    background: #000000;
+    background: url(../img/background.jpg) no-repeat 0% 0%;
+    line-height: 30px;
+    padding: 0 10px;
+}
+.dialog-title-item{
+    float: left;
+}
+.dialog-title-close{
+    color:#ffffff;
+    position:absolute;
+    left:20px;
+    cursor: pointer;
+    bottom:10px;
+}

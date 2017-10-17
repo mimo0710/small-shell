@@ -1,49 +1,76 @@
-#nav{
-    width: 100%;
-    height: 54px;
-    background: #262626;
-    position: relative;
-}
-#nav-left{
-    left: 20px;
-    position: absolute;
-}
-#nav-left span{
-    color: white;
-    font-size: 20px;
-    top: 11px;
-    position: absolute;
-    left: 70px;
-}
-#nav-right{
-    position: absolute;
-    float: right;
-    right: 20px;
-}
 #head{
-    background: #000;
-    height: 220px;
+    background: url(../img/background.jpg) no-repeat center;
+    height: 648px;
 }
-figure{
-    width: 300px;
-    height: 150px;
-    margin: 0 auto;
-    background: url("../img/head.png") no-repeat;
+#nav li{
+    float: left;
 }
-@media(max-width: 479px){
- figure{
-     background: url("../img/head-small.jpg") no-repeat;
- }
+.button-menu{
+    border:3px solid rgba(255,255,255,1);
+    border-radius:25px;
+    height: 40px;
+    width: 100px;
+    background: rgba(255,255,255,0);
+    line-height: 40px;
+    font-size: 20px;
+    color: #FFFFFF;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #body{
-    width: 100%;
-    height: 600px;
-    background: #262626;
-    position: relative;
+    height: 500px;
 }
 #footer{
-    background: #000;
+    background: #feebca;
     height: 150px;
 }
 #footer-left{
@@ -55,12 +82,7 @@ figure{
 }
 #footer ul li{
     padding-top: 10px;
-    color: white;
-}
-body{
-    background: black;
-    perspective:1000px;
-    perspective-origin: 20% 1000px;
+    color: #000000;
 }
 .container{
     width: 50px;
@@ -73,7 +95,7 @@ body{
 .container div{
     width: 50px;
     height: 50px;
-    background:#262626;
+    background:dimgrey;
     position: absolute;
     text-align: center;
     font-size: 15px;
@@ -82,6 +104,7 @@ body{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    color: #FFFFFF;;
 }
 #one{
     -webkit-transform: rotateY(90deg) translateZ(25px);
